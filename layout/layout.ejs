@@ -7,6 +7,7 @@
   <%- partial('_partial/header', {cache: true}) %>
   <main class="pt-14">
     <%- body %>
+    <%- partial('_partial/paginator') %>
   </main>
   <%- partial('_partial/footer', {cache: true}) %>
   <div class="back-to-top box-border fixed right-6 z-1024 -bottom-20 rounded py-1 px-1 bg-slate-900 opacity-60 text-white cursor-pointer text-center dark:bg-slate-600">

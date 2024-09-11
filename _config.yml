@@ -1,8 +1,10 @@
 # Header
 nav:
   Posts: /archives
-  # Categories: /category
-  # Tags: /tag
+  Categories: /categories
+  Tags: /tags
+  Nagging: /nagging
+  About: /about
 
 # favicon
 favicon: /favicon.png
@@ -12,7 +14,7 @@ logo: /images/logo.svg
 
 # links
 links:
-  Github: https://github.com/xbmlz
+  # Github: https://github.com/foxnes
   # ZhiHu:
   # Twitter:
   # Weibo:
@@ -28,7 +30,7 @@ fancybox: true
 mathjax: true
 
 # echarts
-echarts: true
+echarts: false
 
 # busuanzi
 busuanzi: true
