@@ -58,3 +58,6 @@ maple:
   # 0-1
   speed: 0.5
 
+# waline
+waline:
+  enable: true
