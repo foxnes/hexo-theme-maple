@@ -13,20 +13,20 @@
         <%- page.title %>
       </h1>
       <div>
-        <section class="flex items-center gap-3 text-sm">
+        <section class="flex items-center gap-3 text-sm flex-wrap">
           <span class="flex items-center gap-1">
-            <iconify-icon width="18" icon="carbon-calendar" ></iconify-icon>
-            <time><%- date(page.updated, "YYYY-MM-DD") %></time>
+            <iconify-icon width="18" icon="carbon-calendar"></iconify-icon>
+            <time><%- date(page.date, "YY-M-D") %></time>
           </span>
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
-            <iconify-icon width="18" icon="ic:round-access-alarm" ></iconify-icon>
-            <span><%= min2read(page.content) %> min</span>
+            <iconify-icon width="18" icon="ic:round-access-alarm"></iconify-icon>
+            <span><%= min2read(page.content) %>min</span>
           </span>
           <span class="text-gray-400">·</span>
           <span class="flex items-center gap-1">
-            <iconify-icon width="18" icon="icon-park-outline:font-search" ></iconify-icon>
-            <span><%= wordcount(page.content) %> words</span>
+            <iconify-icon width="18" icon="icon-park-outline:font-search"></iconify-icon>
+            <span><%= wordcount(page.content) %><!-- words --></span>
           </span>
           <% if (page.categories && page.categories.length) { %>
             <span class="text-gray-400">·</span>

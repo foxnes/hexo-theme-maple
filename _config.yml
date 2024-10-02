@@ -39,7 +39,7 @@ busuanzi: true
 mermaid:
   enable: true
   # Available themes: default | dark | forest | neutral
-  theme: default
+  theme: neutral
 
 # giscus
 giscus:

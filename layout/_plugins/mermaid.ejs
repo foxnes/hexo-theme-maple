@@ -1,6 +1,6 @@
 <% if (theme.mermaid.enable) { %>
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.9.1/mermaid.min.js" defer></script>
+<script defer>
   $(document).ready(() => {
     const maraidConfig = {
       theme: "<%= theme.mermaid.theme %>",
@@ -8,8 +8,22 @@
       flowchart: { curve: "linear" },
       gantt: { axisFormat: "%m/%d/%Y" },
       sequence: { actorMargin: 50 },
+      'themeVariables': {
+        'primaryColor': '#BB2528',
+        'primaryTextColor': '#fff',
+        'primaryBorderColor': '#7C0000',
+        'lineColor': '#F8B229',
+        'secondaryColor': '#006100',
+        'tertiaryColor': '#fff',
+      }
     };
     mermaid.initialize(maraidConfig);
   });
 </script>
+<style>
+  pre.mermaid{
+    background-color: var(--highlight-background);
+    color: var(--highlight-foreground);
+  }
+</style>
 <% } %>
