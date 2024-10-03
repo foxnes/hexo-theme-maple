@@ -1,33 +1,24 @@
 <% if (theme.mathjax) { %>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    "HTML-CSS": {
-        preferredFont: "TeX",
-        availableFonts: ["STIX","TeX"],
-        linebreaks: { automatic:true },
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+<!-- <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath:[ ["$", "$"], ["\\(","\\)"] ],
+  },
+  options: {
+    skipHtmlTags: [            //  HTML tags that won't be searched for math
+        'script', 'noscript', 'style', 'textarea', 'pre', 'code', 'annotation', 'annotation-xml'
+    ],
+    includeHtmlTags: {         //  HTML tags that can appear within math
+        br: '\n', wbr: '', '#comment': ''
     },
-    tex2jax: {
-        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-        processEscapes: true,
-        ignoreClass: "tex2jax_ignore|dno",
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-        equationNumbers: { autoNumber: "AMS" },
-        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-        Macros: { href: "{}" }
-    },
-    messageStyle: "none"
-  });
+    ignoreHtmlClass: 'tex2jax_ignore|dno',
+    processHtmlClass: 'tex2jax_process',  //  class that marks tags that should be searched
+    compileError: function (doc, math, err) {doc.compileError(math, err)},
+    typesetError: function (doc, math, err) {doc.typesetError(math, err)},
+    renderActions: {}
+  }
+};
 </script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-      for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-  });
-</script>
+<script async src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js"></script>
 <% } %>
