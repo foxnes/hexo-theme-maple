@@ -1,24 +1,22 @@
 <% if (theme.mermaid.enable) { %>
-<script src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.9.1/mermaid.min.js" defer></script>
-<script defer>
-  $(document).ready(() => {
-    const maraidConfig = {
-      theme: "<%= theme.mermaid.theme %>",
-      logLevel: 3,
-      flowchart: { curve: "linear" },
-      gantt: { axisFormat: "%m/%d/%Y" },
-      sequence: { actorMargin: 50 },
-      'themeVariables': {
-        'primaryColor': '#BB2528',
-        'primaryTextColor': '#fff',
-        'primaryBorderColor': '#7C0000',
-        'lineColor': '#F8B229',
-        'secondaryColor': '#006100',
-        'tertiaryColor': '#fff',
-      }
-    };
-    mermaid.initialize(maraidConfig);
-  });
+<script type="module">
+  import mermaid from 'https://cdn.bootcdn.net/ajax/libs/mermaid/11.0.0-alpha.7/mermaid.esm.min.mjs';
+  const maraidConfig = {
+    theme: "<%= theme.mermaid.theme %>",
+    logLevel: 3,
+    flowchart: { curve: "linear" },
+    gantt: { axisFormat: "%m/%d/%Y" },
+    sequence: { actorMargin: 50 },
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff',
+    }
+  };
+  mermaid.initialize(maraidConfig);
 </script>
 <style>
   pre.mermaid{
